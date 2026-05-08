@@ -479,6 +479,7 @@ function enx_page_add_candidate() {
         var ZP  = <?php echo json_encode($zp_pos) ?>;
         var BDC = <?php echo json_encode($bdc_pos) ?>;
         var GP  = <?php echo json_encode($gp_pos) ?>;
+        var savedPanSlugs = <?php echo json_encode( array_values( array_filter( explode(',', (string)($m['panchayat_slugs']??'') ) ) ) ); ?>;
 
         var etSel   = document.getElementById('enx-et');
         var panSec  = document.getElementById('pan-sec');
@@ -533,8 +534,14 @@ function enx_page_add_candidate() {
         function populateBdcGrid() {
             var cbGrid = document.getElementById('bdc-checkbox-grid');
             if (!cbGrid) return;
-            // Preserve any already-checked slugs so we can restore them
+            // Preserve any already-checked slugs so we can restore them.
+            // Seed from server-rendered savedPanSlugs so an Edit-screen load
+            // (which never fires a change event on dSel/bSel) still restores
+            // checkmarks when populateBdcGrid() runs.
             var prevChecked = {};
+            if (typeof savedPanSlugs !== 'undefined' && savedPanSlugs && savedPanSlugs.length) {
+                savedPanSlugs.forEach(function(s){ prevChecked[s] = true; });
+            }
             cbGrid.querySelectorAll('input[type="checkbox"]:checked').forEach(function(cb){ prevChecked[cb.value] = true; });
             cbGrid.innerHTML = '';
             var d = dSel ? dSel.value : '';
@@ -762,10 +769,15 @@ function enx_save_candidate_form() {
     foreach ( $text_fields as $k )
         update_post_meta($post_id,$k,sanitize_text_field($_POST[$k]??''));
     // Multi-panchayat for BDC Samiti Ward
-    $pan_slugs_raw = array_map('sanitize_title', (array)($_POST['panchayat_slugs']??[]));
-    $pan_slugs_str = implode(',',$pan_slugs_raw);
-    update_post_meta($post_id,'panchayat_slugs',$pan_slugs_str);
-    if(!empty($pan_slugs_raw)) update_post_meta($post_id,'panchayat_slug',$pan_slugs_raw[0]);
+    // Trim whitespace before sanitize_title() so values like " granda-panchayat"
+    // don't fail in_array comparisons on later loads.
+    $pan_slugs_in  = (array) ( $_POST['panchayat_slugs'] ?? [] );
+    $pan_slugs_raw = array_values( array_filter( array_map( function( $s ) {
+        return sanitize_title( trim( (string) $s ) );
+    }, $pan_slugs_in ) ) );
+    $pan_slugs_str = implode( ',', $pan_slugs_raw );
+    update_post_meta( $post_id, 'panchayat_slugs', $pan_slugs_str );
+    if ( ! empty( $pan_slugs_raw ) ) update_post_meta( $post_id, 'panchayat_slug', $pan_slugs_raw[0] );
     // Per-post poster template override (admin only)
     if ( $is_admin ) {
         update_post_meta($post_id,'enx_post_poster_tpl_en',esc_url_raw($_POST['enx_post_poster_tpl_en']??''));

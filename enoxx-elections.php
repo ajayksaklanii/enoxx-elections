@@ -10,7 +10,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'ENX_VERSION', '3.5.4' );
+define( 'ENX_VERSION', '3.5.5' );
 define( 'ENX_FILE',    __FILE__ );
 define( 'ENX_DIR',     plugin_dir_path( __FILE__ ) );
 define( 'ENX_URL',     plugin_dir_url( __FILE__ ) );

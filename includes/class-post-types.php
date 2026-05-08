@@ -99,6 +99,7 @@ function enx_meta_fields() {
         'district_slug','district_text',
         'block_slug','block_text',
         'panchayat_slug','panchayat_text',
+        'panchayat_slugs','panchayat_slugs_hi',
         'zp_ward_slug','zp_ward_text','bdc_ward_slug','bdc_ward_text',
         // ULB
         'ulb_slug','ulb_text','ulb_type','ulb_category',
