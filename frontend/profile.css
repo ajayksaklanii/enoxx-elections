@@ -1,0 +1,137 @@
+/* ENOXX Elections — Profile CSS v2 */
+:root{--enx-navy:#112b4a;--enx-navy2:#173a63;--enx-saffron:#d97706;--enx-gold:#f59e0b;--enx-bg:#f7f5f0;--enx-white:#fff;--enx-border:#e8e3d7;--enx-muted:#6b7280;--enx-shadow:0 8px 24px rgba(17,43,74,.08)}
+.enx-wrap{width:100%;max-width:1480px;margin:0 auto;padding:20px 18px 50px;box-sizing:border-box}
+.enx-profile{width:100%}
+
+/* Hero */
+.enx-hero{position:relative;border-radius:24px;overflow:hidden;background:linear-gradient(135deg,var(--enx-navy),var(--enx-navy2),#214c7f);box-shadow:var(--enx-shadow);margin-bottom:22px}
+.enx-hero-bg{position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(255,255,255,.12),transparent 32%),radial-gradient(circle at bottom left,rgba(217,119,6,.18),transparent 30%);pointer-events:none}
+.enx-hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:center;padding:24px}
+.enx-photo-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:8px;box-shadow:0 12px 32px rgba(0,0,0,.18)}
+.enx-photo-card img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;display:block;background:#d8dee7}
+.enx-hero-text{display:flex;flex-direction:column;justify-content:center}
+.enx-badge-election{display:inline-block;font-size:15px;font-weight:700;color:#f7d9a2;margin-bottom:10px;letter-spacing:.2px}
+.enx-name{font-size:clamp(34px,4vw,54px);line-height:1.05;font-weight:800;color:#fff;margin:0 0 14px}
+.enx-highlight{display:inline-flex;align-items:center;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;padding:9px 18px;border-radius:14px;font-size:20px;font-weight:800;margin-bottom:14px;width:fit-content;max-width:100%;box-shadow:0 8px 20px rgba(217,119,6,.22)}
+.enx-contest{font-size:18px;font-weight:700;color:#fff;margin-bottom:8px}
+.enx-location{font-size:15px;color:rgba(255,255,255,.88);font-weight:500;margin-bottom:16px}
+.enx-party{display:inline-block;background:rgba(255,255,255,.1);color:#f9f9f9;border-left:4px solid var(--enx-saffron);padding:7px 12px;border-radius:8px;font-size:14px;font-weight:700;margin-bottom:12px}
+.enx-actions{margin-top:14px}
+.enx-share-btn,.enx-poster-btn{display:inline-flex;align-items:center;padding:11px 24px;border-radius:12px;font-size:15px;font-weight:800;cursor:pointer;border:none;text-decoration:none;margin-right:10px;margin-top:8px}
+.enx-share-btn{background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;box-shadow:0 8px 18px rgba(217,119,6,.22)}
+.enx-poster-btn{background:#f6d07f;color:#173a70}
+
+/* Facts */
+.enx-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:26px}
+.enx-fact{background:var(--enx-white);border:1px solid var(--enx-border);border-radius:20px;padding:20px;box-shadow:var(--enx-shadow);position:relative;overflow:hidden}
+.enx-fact::before{content:'';position:absolute;inset:0 auto 0 0;width:5px;background:linear-gradient(to bottom,var(--enx-gold),var(--enx-saffron))}
+.enx-fact-label{display:block;font-size:12px;font-weight:700;color:var(--enx-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.enx-fact-value{display:block;font-size:20px;font-weight:800;color:#1e293b;word-break:break-word}
+
+/* Content grid */
+.enx-content-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(300px,.9fr);gap:24px;align-items:start;margin-bottom:24px}
+.enx-main .enx-card{margin-bottom:24px}
+
+/* Cards */
+.enx-card{background:var(--enx-white);border:1px solid var(--enx-border);border-radius:24px;overflow:hidden;box-shadow:var(--enx-shadow);margin-bottom:24px}
+.enx-card-head{position:relative;background:linear-gradient(135deg,#fffdf9,#f8f3ea);padding:18px 22px;font-size:18px;font-weight:800;color:var(--enx-navy);border-bottom:1px solid var(--enx-border)}
+.enx-card-head::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(to bottom,var(--enx-gold),var(--enx-saffron))}
+.enx-card-body{padding:24px;font-size:17px;line-height:1.9;color:#1e293b}
+.enx-card-body p:last-child{margin-bottom:0}
+
+/* Details */
+.enx-details{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.enx-detail{background:#fbfaf7;border:1px solid #eee7d9;border-radius:18px;padding:16px 18px;font-size:16px}
+.enx-detail strong{display:block;color:var(--enx-navy);margin-bottom:4px;font-size:13px;text-transform:uppercase;letter-spacing:.3px}
+
+/* Explore */
+.enx-explore{list-style:none;margin:0;padding:0}
+.enx-explore li{margin-bottom:12px}
+.enx-explore a{display:block;padding:14px 16px;border-radius:14px;background:#f8f5ef;border:1px solid #eee7d9;text-decoration:none;font-weight:700;color:#1e293b;transition:all .18s}
+.enx-explore a:hover{background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;transform:translateY(-2px)}
+
+/* Two-col */
+.enx-two-col{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:24px}
+
+/* Videos */
+.enx-video{border-radius:14px;overflow:hidden}
+.enx-video iframe{width:100%;height:240px;display:block;border-radius:12px}
+.enx-video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+
+/* Related */
+.enx-related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
+.enx-related-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;border:1px solid var(--enx-border);border-radius:16px;overflow:hidden;background:#fff;transition:transform .2s,box-shadow .2s}
+.enx-related-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.08)}
+.enx-related-card img{width:100%;height:160px;object-fit:cover;display:block}
+.enx-related-info{padding:12px}
+.enx-related-info h4{font-size:15px;font-weight:700;margin:0 0 5px;color:var(--enx-navy)}
+.enx-related-role{display:block;font-size:12px;color:var(--enx-saffron);font-weight:700;margin-bottom:3px}
+.enx-related-loc{display:block;font-size:12px;color:var(--enx-muted)}
+
+/* Safety: theme/wpautop sometimes injects empty <p> tags inside our grids — hide them */
+.enx-related-grid > p:empty,
+.enx-news-grid > p:empty,
+.enx-video-grid > p:empty,
+.enx-two-col > p:empty,
+.enx-facts > p:empty,
+.enx-details > p:empty{display:none!important}
+.enx-related-grid > p,
+.enx-news-grid > p,
+.enx-video-grid > p{margin:0;padding:0}
+
+/* News */
+.enx-news-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.enx-news-item{display:flex;gap:12px;text-decoration:none;color:inherit;padding:12px;border:1px solid #e7dfd2;border-radius:14px;background:#fff;transition:all .18s}
+.enx-news-item:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.05)}
+.enx-news-thumb{width:90px;height:68px;flex:0 0 90px;border-radius:10px;overflow:hidden}
+.enx-news-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.enx-news-text{flex:1;min-width:0}
+.enx-news-title{font-size:16px;font-weight:700;line-height:1.35;color:#19365d;margin-bottom:5px}
+.enx-news-exc{font-size:13px;line-height:1.5;color:#5c6675;margin-bottom:6px}
+.enx-news-date{font-size:12px;color:var(--enx-muted)}
+
+/* Responsive */
+@media(max-width:1200px){
+.enx-hero-inner{grid-template-columns:220px 1fr;gap:22px;padding:20px}
+.enx-facts{grid-template-columns:repeat(2,1fr)}
+.enx-content-grid,.enx-two-col{grid-template-columns:1fr}}
+@media(max-width:768px){
+.enx-news-grid,.enx-video-grid{grid-template-columns:1fr}
+.enx-related-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:767px){
+.enx-wrap{padding:14px 12px 30px}
+.enx-hero-inner{grid-template-columns:1fr;padding:18px 14px;gap:18px}
+.enx-photo-card{max-width:240px;margin:0 auto}
+.enx-name{font-size:32px}
+.enx-highlight{font-size:16px;padding:8px 14px}
+.enx-contest{font-size:16px}
+.enx-location{font-size:14px}
+.enx-facts{grid-template-columns:1fr}
+.enx-details{grid-template-columns:1fr}
+.enx-share-btn,.enx-poster-btn{width:100%;justify-content:center;margin-right:0;margin-bottom:8px}}
+
+/* Candidate Profile Bottom widget area */
+.enx-candidate-bottom-wrap,
+body > div[style*="width:100%;clear:both"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+
+/* Directory top banner centering */
+body.enx-directory-page .enx-directory-top-wrap,
+body.enx-directory-page .enx-directory-top-wrap > * {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+/* Bio text */
+.enx-bio-text{font-size:16px;line-height:1.75;color:#334155}
+.enx-bio-text p{margin:0 0 14px}
+
+/* Sidebar */
+.enx-sidebar{display:flex;flex-direction:column;gap:16px}
